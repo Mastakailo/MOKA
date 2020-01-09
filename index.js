@@ -4,9 +4,14 @@ function isAdult(age) {
     else if (age > 17)return true;
     else if (age <= 0 )return "wrong age";
     return false;
-}module.exports = {isAdult};
-// }
-// func sortArrayUp ( ) {
+}
+ function sortArrayUp( arr = [] ) {
+     for (let i = 0; i < arr.length; i++){
+        if ({}.toString.call(arr[i]) !== '[object Number]') return undefined;
+        }
+     if ({}.toString.call(arr) !== '[object Array]') return undefined;
+    return arr.sort((a,b) => a-b);
+ }
 // }
 //
 //
@@ -30,3 +35,4 @@ function isAdult(age) {
 
 
 
+module.exports = {isAdult,sortArrayUp};
