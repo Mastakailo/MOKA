@@ -1,0 +1,1 @@
+isAdult,sortArrayUp,isPalindrome,isOddnumber,evenNumber,power,exclusiveElements};

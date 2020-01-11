@@ -1,7 +1,36 @@
-const {isAdult,sortArrayUp} = require("../index.js");
+const {isAdult,sortArrayUp,isPalindrome,isOddnumber,evenNumber,power,exclusiveElements} = require("../index.js");
 const {expect} = require('chai');
+describe ('testing function power',() => {
 
+    it('testing power a , b ', () => {
+        expect(power(4, 4),'true').to.be.equal(256);
+    })
 
+    it('testing negativ power a , b ', () => {
+        expect(power(5, -5), 'test').to.be.equal(0.00031999999999999997);
+    })
+
+    it('testing float power a , b ', () => {
+        expect(power(5, 0.5), 'test').to.be.equal(2.23606797749979);
+    })
+
+    it('testing negativ number a , b ', () => {
+        expect(power(-5, 2), 'test').to.be.equal(25);
+    })
+
+    it('testing string number a , b ', () => {
+        expect(power('5', 5), 'test').to.be.equal(3125);
+    })
+
+    it('testing null power a , b ', () => {
+        expect(power(5, null), 'test').to.be.equal('Wrong data');
+    })
+
+    it('testing null number a , b ', () => {
+        expect(power(null, 2), 'test').to.be.equal(0);
+    })
+
+})
 
 describe ('testing function isAdult',() => {
 
@@ -52,6 +81,97 @@ describe ('testing function sortArrayUp', () => {
         expect(sortArrayUp([12,'Mad','4rfs',99])).to.be.undefined;
 
     });
+
+
+
+})
+
+
+describe ('testing fuction for PolindromWords',() => {
+
+    it('that words not polindrom ',  () => {
+        expect(isPalindrome('fedor')).to.be.false;
+    });
+
+    it('that words polindrom ',  () => {
+        expect(isPalindrome('bamab')).to.be.true;
+    });
+
+    it('that words include number ',  () => {
+        expect(isPalindrome('bamab23223')).to.be.false;
+    });
+
+    it('that words include only numbers',  () => {
+        expect(isPalindrome('3105013')).to.be.true;
+    });
+
+    it('that words include undefined',  () => {
+        expect(isPalindrome(undefined)).to.be.undefined;
+    });
+
+
+
+
+
+
+})
+
+
+describe('testing input number isOddnumber',() => {
+
+    it('testing num isOddnumber',  () => {
+        expect(isOddnumber(1271)).to.be.true;
+    });
+
+    it('testing evenNum isOddnumber',  () => {
+        expect(isOddnumber(12)).to.be.false;
+    });
+
+    it ('testing input string in  isOddnumber',  () => {
+        expect(isOddnumber("32423")).to.be.equal("Wrong data");
+    });
+
+    it ('testing input array in  isOddnumber',  () => {
+        expect(isOddnumber([2,4,5,123,'23',])).to.be.equal("Wrong data");
+    });
+
+    it ('testing input string in  isOddnumber',  () => {
+        expect(isOddnumber("32423")).to.be.equal("Wrong data");
+    });
+
+})
+
+
+describe ('testing input number evenNumber',()=> {
+
+    it('testing num evenNumber',  () => {
+        expect(evenNumber(1271)).to.be.false;
+    });
+
+    it('testing evenNum evenNumber',  () => {
+        expect(evenNumber(12)).to.be.true;
+    });
+
+    it ('testing input string in  evenNumber',  () => {
+        expect(evenNumber("32423")).to.be.equal("Wrong data");
+    });
+
+    it ('testing input array in  evenNumber',  () => {
+        expect(evenNumber([2,4,5,123,'23',])).to.be.equal("Wrong data");
+    });
+
+    it ('testing input string in  evenNumber',  () => {
+        expect(evenNumber("32423")).to.be.equal("Wrong data");
+    });
+
+
+})
+
+
+describe ('testing exclusiveElements',() => {
+    it ('test array of numbers', () => {
+        expect(exclusiveElements([1,2,3,4,1,23,34])).to.be.equal("")
+    })
 
 
 
